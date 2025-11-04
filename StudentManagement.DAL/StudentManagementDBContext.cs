@@ -14,5 +14,13 @@ namespace StudentManagement.DAL
         public DbSet<Student> Students { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new Configuration.StudentConfiguration());
+        }
+
+
     }
 }

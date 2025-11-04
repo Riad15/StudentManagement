@@ -12,3 +12,6 @@
 
     }
 }
+
+// dotnet ef migrations add InitialCreate --project StudentManagement.DAL --startup-project StudentManagement.WEB
+// dotnet ef database update --project StudentManagement.DAL --startup-project StudentManagement.WEB
