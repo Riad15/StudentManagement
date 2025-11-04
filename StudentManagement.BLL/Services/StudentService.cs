@@ -35,5 +35,24 @@ namespace StudentManagement.BLL.Services
         {
             _studentRepository.UpdateStudent(student);
         }
+
+
+
+        public Student DetailsStudent(int id)
+        {
+            return _studentRepository.DetailsStudent(id);
+        }
+
+
+       public void DeleteStudent(int id)
+        {
+            var student = _studentRepository.GetAllStudents().FirstOrDefault(s => s.Id == id);
+            if (student != null)
+            {
+                // Assuming a DeleteStudent method exists in the repository
+                _studentRepository.DeleteStudent(student);
+            }
+        }
+
     }
 }

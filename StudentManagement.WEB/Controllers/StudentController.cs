@@ -70,5 +70,38 @@ namespace StudentManagement.WEB.Controllers
         }
 
 
+        public IActionResult Delete(int id)
+        {
+            var student = _studentService.GetAllStudents().FirstOrDefault(s => s.Id == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            _studentService.DeleteStudent(id);
+            return RedirectToAction("Index");
+        }
+
+
+        public IActionResult Details(int id)
+        {
+            var student = _studentService.GetAllStudents().FirstOrDefault(s => s.Id == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+
+
+
+
+
     }
 }

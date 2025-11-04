@@ -36,5 +36,18 @@ namespace StudentManagement.DAL.Repository
             _context.SaveChanges();
         }
 
+
+        public Student DetailsStudent(int id)
+        {
+            var student = _context.Students.Find(id);
+            return student;
+        }
+
+        public void DeleteStudent(Student student)
+        {
+            _context.Students.Remove(student);
+            _context.SaveChanges();
+        }
+
     }
 }
