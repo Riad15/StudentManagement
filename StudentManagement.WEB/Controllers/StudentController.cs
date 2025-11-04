@@ -22,7 +22,7 @@ namespace StudentManagement.WEB.Controllers
         }
 
 
-
+ 
         public IActionResult Create()
         {
             return View();
