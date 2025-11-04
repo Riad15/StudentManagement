@@ -1,4 +1,5 @@
 ﻿using StudentManagement.DAL.Repository;
+using StudentManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,17 @@ namespace StudentManagement.BLL.Services
         }
 
 
-        public IEnumerable<Model.Student> GetAllStudents()
+        public IEnumerable<Student> GetAllStudents()
         {
             return _studentRepository.GetAllStudents();
         }
+
+
+        public void AddStudent(Student student)
+        {
+            _studentRepository.AddStudent(student);
+        }
+
+
     }
 }

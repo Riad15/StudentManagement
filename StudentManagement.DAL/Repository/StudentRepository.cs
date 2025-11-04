@@ -21,5 +21,13 @@ namespace StudentManagement.DAL.Repository
         {
             return _context.Students.ToList();
         }
+
+
+        public void AddStudent(Student student)
+        {
+            _context.Students.Add(student);
+            _context.SaveChanges();
+        }
+
     }
 }
