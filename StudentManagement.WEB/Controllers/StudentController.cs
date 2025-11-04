@@ -36,8 +36,33 @@ namespace StudentManagement.WEB.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Code to add the student to the database would go here
+               
                 _studentService.AddStudent(student);
+
+                return RedirectToAction("Index");
+            }
+            return View(student);
+        }
+
+
+        public IActionResult Edit(int id)
+        {
+            var student = _studentService.GetAllStudents().FirstOrDefault(s => s.Id == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+
+
+        [HttpPost]
+        public IActionResult Edit(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                
+                _studentService.UpdateStudent(student);
 
                 return RedirectToAction("Index");
             }

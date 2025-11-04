@@ -29,5 +29,12 @@ namespace StudentManagement.DAL.Repository
             _context.SaveChanges();
         }
 
+
+        public void UpdateStudent(Student student)
+        {
+            _context.Students.Update(student);
+            _context.SaveChanges();
+        }
+
     }
 }

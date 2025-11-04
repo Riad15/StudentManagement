@@ -31,5 +31,9 @@ namespace StudentManagement.BLL.Services
         }
 
 
+        public void UpdateStudent(Student student)
+        {
+            _studentRepository.UpdateStudent(student);
+        }
     }
 }
